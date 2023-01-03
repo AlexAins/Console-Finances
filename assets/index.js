@@ -89,10 +89,10 @@ var finances = [
 
 // Console Title for Financial Analysis
 console.log("Financial Analysis");
-console.log("-------------------------")
+console.log("-------------------------");
 
 // Total number of months in Dataset
-var months =(finances.length)
+var months =(finances.length);
 console.log("Total Months: " + months);
 
 // Net Total Profit/Loss over Total Period
@@ -101,6 +101,7 @@ var net = 0;
 for(var i=0; i < finances.length; i++){
     net += finances[i][1];
 }
+
 console.log("Total: $" + net);
 
 // Average Changes in Profit/Loss over Total Period
@@ -114,16 +115,27 @@ var average = change.reduce((a,b)=> a+b, 0) / change.length;
 console.log("Average Change: $" + average.toFixed(2));
 
 // Greatest increase in Profits (Month and Amount)
-var maxChange = change[0]
+var maxChange = change[0];
 for(var i=1; i< change.length; i++){
     if (change[i] > maxChange){
         maxChange = change[i]
     }
 }
 
-var bestMonth = change.indexOf(maxChange)
-var bestM = finances[bestMonth + 1]
+var bestMonth = change.indexOf(maxChange);
+var bestM = finances[bestMonth + 1];
 
-console.log("Greatest Increase in Profits: " + bestM[0] + "(£" + maxChange + ")");
+console.log("Greatest Increase in Profits: " + bestM[0] + " (£ " + maxChange + ")");
 
 // Greatest decrease in Losses (Month and Amount)
+var worstChange = change[0];
+for(var i=1; i<change.length; i++){
+    if (change[i] < worstChange){
+        worstChange = change[i]
+    }
+}
+
+var worstMonth = change.indexOf(worstChange);
+var worstM = finances[worstMonth + 1];
+
+console.log("Greatest Decrease in Profits: " + worstM[0] + " (£ " + worstChange + ")");
