@@ -90,3 +90,24 @@ var finances = [
 // Console Title for Financial Analysis
 console.log("Financial Analysis");
 console.log("-------------------------")
+
+// Total number of months in Dataset
+var months =(finances.length)
+console.log('Total Months: ' + months);
+
+// Net Total Profit/Loss over Total Period
+
+
+
+
+// Average Changes in Profit/Loss over Total Period
+
+
+
+
+// Greatest increase in Profits (Month and Amount)
+
+
+
+
+// Greatest decrease in Losses (Month and Amount)
