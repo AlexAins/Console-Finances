@@ -93,12 +93,16 @@ console.log("-------------------------")
 
 // Total number of months in Dataset
 var months =(finances.length)
-console.log('Total Months: ' + months);
+console.log("Total Months: " + months);
 
 // Net Total Profit/Loss over Total Period
+var net = 0;
 
+for(var i=0; i < finances.length; i++){
+    net += finances[i][1];
+}
 
-
+console.log("Total: $" + net);
 
 // Average Changes in Profit/Loss over Total Period
 
