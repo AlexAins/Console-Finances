@@ -101,12 +101,17 @@ var net = 0;
 for(var i=0; i < finances.length; i++){
     net += finances[i][1];
 }
-
 console.log("Total: $" + net);
 
 // Average Changes in Profit/Loss over Total Period
+var change = [];
+for(var j=1; j<finances.length; j++){
+    change.push(finances[j][1] - finances[j-1][1])
+}
 
+var average = change.reduce((a,b)=> a+b, 0) / change.length;
 
+console.log("Average Change: $" + average.toFixed(2));
 
 
 // Greatest increase in Profits (Month and Amount)
