@@ -105,18 +105,25 @@ console.log("Total: $" + net);
 
 // Average Changes in Profit/Loss over Total Period
 var change = [];
-for(var j=1; j<finances.length; j++){
-    change.push(finances[j][1] - finances[j-1][1])
+for(var i=1; i<finances.length; i++){
+    change.push(finances[i][1] - finances[i-1][1])
 }
 
 var average = change.reduce((a,b)=> a+b, 0) / change.length;
 
 console.log("Average Change: $" + average.toFixed(2));
 
-
 // Greatest increase in Profits (Month and Amount)
+var maxChange = change[0]
+for(var i=1; i< change.length; i++){
+    if (change[i] > maxChange){
+        maxChange = change[i]
+    }
+}
 
+var bestMonth = change.indexOf(maxChange)
+var bestM = finances[bestMonth + 1]
 
-
+console.log("Greatest Increase in Profits: " + bestM[0] + "(£" + maxChange + ")");
 
 // Greatest decrease in Losses (Month and Amount)
