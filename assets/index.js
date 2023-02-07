@@ -139,3 +139,9 @@ var worstMonth = change.indexOf(worstChange);
 var worstM = finances[worstMonth + 1];
 
 console.log("Greatest Decrease in Profits: " + worstM[0] + " (£ " + worstChange + ")");
+
+fetch("https://gnews.io/api/v4/search?q=br&apikey=4c7d29a7e0c153fbe2f4224825bcec4a")
+.then(response => response.json())
+.then(function(trialApi){
+    console.log(trialApi);
+})
